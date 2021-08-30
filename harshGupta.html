@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment</title>
+        <style>
+            #box{
+                margin-left: 400px;
+                margin-top: 100px;
+                background-color: rgb(1, 1, 24);
+                width: 800px;
+                border: 15px solid rgb(1, 1, 24);
+                height: 250px;
+            }
+            #merge{
+                margin-top: 250px;
+                display: flex;
+            }
+            #one,#two, #three, #four, #five{
+                margin-top: -250px;
+                width: 160px;
+                height: auto;
+            }
+            #one{
+                background-color: rgb(162, 22, 204);
+            }
+            #two{
+                background-color: rgb(233, 15, 233);
+            }
+            #three{
+                background-color: rgb(245, 110, 121);
+            }
+            #four{
+                background-color: rgb(238, 142, 142);
+            }
+            #five{
+                background-color: rgb(236, 163, 68);
+            }
+            button{
+                width: 100px;
+                height: 30px;
+                color: white;
+                border-radius: 4px;
+            }
+            #start{
+                background-color: green;
+                margin-top: 50px;
+                margin-left: 550px;
+            }
+            #stop{
+                background-color: red;
+                margin-top: 50px;
+                margin-left: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <div id="merge">
+                <div id="one"></div>
+                <div id="two"></div>
+                <div id="three"></div>
+                <div id="four"></div>
+                <div id="five"></div>
+            </div>
+        </div>
+        <button  id="start">Start</button>
+        <button  id="stop">stop</button>
+        <script>
+            let start=document.getElementById("start");
+            let stopp=document.getElementById("stop");
+            var st;
+            function changeHeight(){
+                document.getElementById("one").style.marginTop=`-${Math.floor(Math.random()*250)}px`;
+                document.getElementById("two").style.marginTop=`-${Math.floor(Math.random()*250)}px`;
+                document.getElementById("three").style.marginTop=`-${Math.floor(Math.random()*250)}px`;
+                document.getElementById("four").style.marginTop=`-${Math.floor(Math.random()*250)}px`;
+                document.getElementById("five").style.marginTop=`-${Math.floor(Math.random()*250)}px`;
+            }
+
+           
+            start.addEventListener("click",()=>{
+                st=setInterval(changeHeight,1000);
+            });
+            stopp.addEventListener("click",()=>{
+                clearInterval(st);
+            });
+            
+        </script>
+    </body>
+</html>
